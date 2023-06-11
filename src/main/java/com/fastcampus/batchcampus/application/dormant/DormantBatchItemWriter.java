@@ -1,4 +1,4 @@
-package com.fastcampus.batchcampus.application;
+package com.fastcampus.batchcampus.application.dormant;
 
 import com.fastcampus.batchcampus.EmailProvider;
 import com.fastcampus.batchcampus.batch.ItemWriter;

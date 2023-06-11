@@ -3,6 +3,7 @@ package com.fastcampus.batchcampus;
 import com.fastcampus.batchcampus.batch.BatchStatus;
 import com.fastcampus.batchcampus.batch.Job;
 import com.fastcampus.batchcampus.batch.JobExecution;
+import com.fastcampus.batchcampus.batch.TaskletJob;
 import com.fastcampus.batchcampus.customer.Customer;
 import com.fastcampus.batchcampus.customer.CustomerRepository;
 import org.assertj.core.api.Assertions;
@@ -110,13 +111,30 @@ class DormantBatchJobTest {
     void test4() {
 
         // given
-        final Job dormantBatchJob = new Job(null, null);
+        final Job dormantBatchJob = new TaskletJob(null);
 
         // when
         final JobExecution result = dormantBatchJob.execute();
 
         // then
         Assertions.assertThat(result.getStatus()).isEqualTo(BatchStatus.FAILED);
+    }
+
+    @Test
+    @DisplayName("358일전에 로그인한 고객에게 휴면계정 예정자라고 메일을 발송해야한다.")
+    void test5() {
+
+        // given
+        saveCustomer(358);
+        saveCustomer(358);
+        saveCustomer(358);
+        saveCustomer(35);
+        saveCustomer(35);
+
+        // when
+        // then
+        dormantBatchJob.execute();
+
     }
 
     private void saveCustomer(long loginMinusDays) {

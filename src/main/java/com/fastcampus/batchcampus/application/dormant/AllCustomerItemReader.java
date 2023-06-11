@@ -1,4 +1,4 @@
-package com.fastcampus.batchcampus.application;
+package com.fastcampus.batchcampus.application.dormant;
 
 import com.fastcampus.batchcampus.batch.ItemReader;
 import com.fastcampus.batchcampus.customer.Customer;
@@ -9,12 +9,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DormantBatchItemReader implements ItemReader<Customer> {
+public class AllCustomerItemReader implements ItemReader<Customer> {
 
     private final CustomerRepository customerRepository;
     private int pageNo = 0;
 
-    public DormantBatchItemReader(CustomerRepository customerRepository) {
+    public AllCustomerItemReader(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
