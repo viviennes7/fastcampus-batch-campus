@@ -16,7 +16,7 @@ import java.util.stream.LongStream;
 @Component
 public class ApiOrderGenerateProcessor implements ItemProcessor<Boolean, ApiOrder> {
 
-    private final List<Long> customerIds = LongStream.range(0, 21).boxed().toList();
+    private final List<Long> customerIds = LongStream.range(0, 20).boxed().toList();
     private final List<ServicePolicy> servicePolices = Arrays.stream(ServicePolicy.values()).toList();
     private final ThreadLocalRandom random = ThreadLocalRandom.current();
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
