@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
 
-@Configuration
+//@Configuration
 @RequiredArgsConstructor
 public class ApiOrderGeneratePartitionJobConfiguration {
 

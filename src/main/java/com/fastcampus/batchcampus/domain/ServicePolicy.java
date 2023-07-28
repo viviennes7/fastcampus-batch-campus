@@ -2,6 +2,8 @@ package com.fastcampus.batchcampus.domain;
 
 import lombok.Getter;
 
+import java.util.Arrays;
+
 @Getter
 public enum ServicePolicy {
     A(1L, "/fastcampus/services/a", 10),
@@ -40,4 +42,19 @@ public enum ServicePolicy {
         this.url = url;
         this.fee = fee;
     }
+
+    public static ServicePolicy findByUrl(String url) {
+        return Arrays.stream(values())
+                .filter(it -> it.url.equals(url))
+                .findFirst()
+                .orElseThrow();
+    }
+
+    public static ServicePolicy findById(Long id) {
+        return Arrays.stream(values())
+                .filter(it -> it.id.equals(id))
+                .findFirst()
+                .orElseThrow();
+    }
+
 }
