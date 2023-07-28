@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.PathResource;
 import org.springframework.transaction.PlatformTransactionManager;
 
-@Configuration
+//@Configuration
 @RequiredArgsConstructor
 public class ApiOrderGenerateJobConfiguration {
 
