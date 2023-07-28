@@ -8,7 +8,6 @@ public class BatchCampusApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BatchCampusApplication.class, args);
-		System.out.println("Hello World");
 	}
 
 }
